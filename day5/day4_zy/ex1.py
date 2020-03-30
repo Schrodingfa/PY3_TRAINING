@@ -6,7 +6,7 @@ while True:
     str = input("please input a string:")
     if str == "q":
         break
-    else:
-        str_list.append(str)
+#    else:
+    str_list.append(str)
 longstr = "".join(str_list)
 print(longstr)

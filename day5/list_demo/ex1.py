@@ -4,6 +4,7 @@
 #               将list01中元素大于3的存入list04
 
 list01 = [i for i in range(1,11)]
+# list01 = list(range(1,11))
 print(list01)
 list02 = [i for i in list01 if i % 2 == 1]
 print(list02)

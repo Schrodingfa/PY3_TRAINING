@@ -1,29 +1,32 @@
 # Author:jxy
 # 根据月份显示天数
-t01 = (1,3,5,7,8,10,12)
-t02 = (4,6,9,11)
-t03 = (2,)
+# t01 = (1,3,5,7,8,10,12)
+# t02 = (4,6,9,11)
+# t03 = (2,)
+#
+# month = int(input("please input month:"))
+# if month in t01:
+#     print("31")
+# elif month in t02:
+#     print("30")
+# elif month in t03:
+#     print("28")
 
-month = int(input("please input month:"))
-if month in t01:
-    print("31")
-elif month in t02:
-    print("30")
-elif month in t03:
-    print("28")
+# month = int(input('please input a month:'))
+#
+# if month < 1 or month > 12:
+#     print('invalid parameter')
+# elif month == 2:
+#     print('28')
+# elif month in (4, 6, 9, 11):
+#     print('30')
+# else:
+#     print('31')
 
-"""
-在控制台中获取一个月份
-打印该月有几天
-"""
-
-mouth = int(input('please input a mouth:'))
-
-if mouth < 1 or mouth > 12:
+# 将每月的天数存入元组
+month_tuple = (31,28,31,30,31,30,31,31,30,31,30,31)
+month = int(input('please input a month:'))
+if month < 1 or month > 12:
     print('invalid parameter')
-elif mouth == 2:
-    print('28')
-elif mouth in (1, 3, 5, 7, 8, 10, 12):
-    print('31')
 else:
-    print('30')
+    print(month_tuple[month - 1])

@@ -13,17 +13,22 @@ import random
 
 win = (("石头", "剪刀"), ("剪刀", "布"), ("布", "石头"))
 # loss = (("剪刀","石头"),("布","剪刀"),("石头","布"))
+items = ("石头", "剪刀","布")
 
 while True:
-    ranstr = random.choice(("石头", "剪刀", "布"))
-    inpstr = input("please input you choice:")
-    t = (inpstr, ranstr)
+    # 系统生成拳
+    ranstr = random.choice(items)
+    # 用户猜拳
+    print("0--石头 1--剪刀 2--布")
+    inpnum = int(input("please input you choice:"))
+    inpstr = items[inpnum]
+
     if inpstr == "q":
         print("Quit")
         break
     elif inpstr == ranstr:
         print("It ends in a draw.")
-    elif t in win:
+    elif (inpstr, ranstr) in win:
         print("You are win.")
     else:
         print("You are loss.")

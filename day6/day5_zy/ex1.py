@@ -18,9 +18,11 @@
 # 打印学生信息
 
 list01 = []
-dict01 = {}
+# dict01 = {}
 
 for i in range(5):
+    # 每次循环创建一个新字典，表示一个新学生
+    dict01 = {}
     dict01["name"] = input("please input name:")
     dict01["age"] = input("please input age:")
     dict01["sex"] = input("please input sex:")

@@ -10,5 +10,6 @@ def count_of_cnstr(str):
             count += 1
     return count
 
+
 str = "待统计string,lalala"
 print(count_of_cnstr(str))

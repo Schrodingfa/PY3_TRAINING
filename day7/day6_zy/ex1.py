@@ -7,9 +7,12 @@
 #     print("偶数")
 
 def check_odd(number):
-    if number % 2 == 1:
-        return True
-    return False
+    # if number % 2 == 1:
+    #     return True
+    # return False
+    # return True if number % 2 == 1 else False
+    return number % 2 == 1
 
-number = int(input("请输入一个整数："))
-print(check_odd(number))
+
+# number = int(input("请输入一个整数："))
+print(check_odd(7))

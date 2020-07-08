@@ -43,14 +43,14 @@ def zero_to_end(list_target):
 # 2 0 0 2 --> 4 0 0 0
 # 2 2 2 0 --> 4 2 0 0
 
-# def marge_num(list_target):
+# def merge_num(list_target):
 #     zero_to_end(list_target)
 #     if list_target[0] == list_target[1]:
 #         list_target[0] += list_target[1]
 #         list_target.pop(1)
 #         list_target.append(0)
 
-def marge_num(list_target):
+def merge_num(list_target):
     for i in range(len(list_target) - 1):
         zero_to_end(list_target)
         if list_target[i] == list_target[i + 1]:
@@ -59,7 +59,7 @@ def marge_num(list_target):
 
 
 # l01=[2,0,4,2]
-# marge_num(l01)
+# merge_num(l01)
 # print(l01)
 
 # 练习3：将二维列表，以表格的形式显示在控制台中
@@ -70,10 +70,71 @@ list01 = [
     [4, 0, 0, 2]
 ]
 
-def print_map(target_list):
-    for i in range(len(target_list)):
-        for j in range(len(target_list[i])):
-            print('%4d' %target_list[i][j],end=' ')
+def print_map(map):
+    for i in range(len(map)):
+        for j in range(len(map[i])):
+            print('%4d' %map[i][j],end=' ')
         print()
 
+# print_map(list01)
+
+# 练习4：定义向左移动函数
+'''
+[2, 0, 0, 2]    [4, 0, 0, 0]
+[2, 2, 0, 0]    [4, 0, 0, 0]
+[2, 0, 4, 4]    [2, 8, 0, 0]
+[4, 0, 0, 2]    [4, 2, 0, 0]
+'''
+
+def move_left(map):
+    for i in range(len(map)):
+        # 从左往右获取行
+        merge_num(map[i])
+
+def move_right(map):
+    for i in range(len(map)):
+        # 从右往左获取行
+        list_merge = map[i][::-1]
+        merge_num(list_merge)
+        map[i][::-1] = list_merge
+
+
+# move_left(list01)
+# # move_right(list01)
+# print_map(list01)
+
+# 作业1：定义向上移动函数
+# 从上往下获取列
+# 交给合并方法
+# 还给原列
+
+def move_up(map):
+    for i in range(len(map)):
+        list_merge = []
+        for j in range(len(map)):
+            list_merge.append(map[j][i])
+        merge_num(list_merge)
+        for j in range(len(map)):
+            map[j][i]=list_merge[j]
+
+# move_up(list01)
+# print_map(list01)
+
+# 作业2：定义向下移动函数
+# 从下往上获取列
+# 交给合并方法
+# 还给原列
+
+def move_down(map):
+    for i in range(len(map)):
+        list_merge = []
+        for j in range(len(map)):
+            list_merge.append(map[j][i])
+        list_merge.reverse()
+        merge_num(list_merge)
+        list_merge.reverse()
+        for j in range(len(map)):
+            map[j][i]=list_merge[j]
+
+move_down(list01)
 print_map(list01)
